@@ -188,6 +188,24 @@ function clb_my_dashboard_widget_display_text() {
 
 
 
+// Add Custom Shortcode
+// function clb_homepage_content() {
+//
+//      $post_id = get_option('page_on_front'); // example post id
+//      $post_content = get_post($post_id);
+//      $content = $post_content->post_content;
+//
+//      return apply_filters('the_content', $content);
+//
+// }
+// add_shortcode( 'homepage_content', 'clb_homepage_content' );
+
+
+
+
+
+
+
 
 // Update CSS within in Admin
 function clb_custom_admin_styles() {
