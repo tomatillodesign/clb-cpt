@@ -162,3 +162,34 @@ function clb_enqueue_set_link_target_scripts() {
      wp_enqueue_script( 'set-link-targets', plugin_dir_url( __FILE__ ) . 'js/set-link-targets.js', array( 'jquery' ), '', true );
 
 }
+
+
+
+
+
+//* Change the footer text
+// Note, this is now no longer the preferred method in Genesis, see:
+// However, the customizer does not allow for dynamic PHP
+// Might be better to still start here
+
+// add_filter('genesis_footer_creds_text', 'clb_footer_creds_filter');
+// function clb_footer_creds_filter( $creds ) {
+//
+//      $blog_title = get_bloginfo();
+//
+//     $creds = '<div class="footer-credit-area">Copyright [footer_copyright] ' . $blog_title . ' &middot; All Rights Reserved &middot; Website by <a href="http://www.tomatillodesign.com/" title="Amazing, Affordable Websites for Nonprofits" target="_blank">Tomatillo Design</a></div>';
+//     return $creds;
+//
+// }
+
+
+
+
+// OPTIONAL
+// Defines Clickable Logo and adds Blog Info to title
+// function special_site_logo() {
+//
+//      echo '<a id="sitelogo" href="' . bloginfo( 'url' ) . '"><img src="/wp-content/uploads/2019/07/logo-only.png" alt="' . bloginfo('name') . '" /></a>';
+// 
+// }
+// add_action( 'genesis_site_title','special_site_logo',5,1);
