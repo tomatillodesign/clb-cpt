@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Everything Bagel 😀
+Plugin Name: Everything Bagel 🥯
 Description: Site-specific functionality and custom code for SITE_NAME_HERE
 Author: Chris Liu-Beers, Tomatillo Design
 Author URI: http://www.tomatillodesign.com
@@ -155,20 +155,9 @@ function clb_my_dashboard_widget_display_text() {
 
 
 
-// Enqueue script - open all links of other sites in new tab
-add_action( 'wp_enqueue_scripts', 'clb_enqueue_set_link_target_scripts' );
-function clb_enqueue_set_link_target_scripts() {
-
-     wp_enqueue_script( 'set-link-targets', plugin_dir_url( __FILE__ ) . 'js/set-link-targets.js', array( 'jquery' ), '', true );
-
-}
-
-
-
-
 
 //* Change the footer text
-// Note, this is now no longer the preferred method in Genesis, see:
+// Note, this is now no longer the preferred method in Genesis, see: https://my.studiopress.com/documentation/snippets/footer/customize-the-credits-text/
 // However, the customizer does not allow for dynamic PHP
 // Might be better to still start here
 
@@ -190,6 +179,36 @@ function clb_enqueue_set_link_target_scripts() {
 // function special_site_logo() {
 //
 //      echo '<a id="sitelogo" href="' . bloginfo( 'url' ) . '"><img src="/wp-content/uploads/2019/07/logo-only.png" alt="' . bloginfo('name') . '" /></a>';
-// 
+//
 // }
 // add_action( 'genesis_site_title','special_site_logo',5,1);
+
+
+
+
+
+
+
+// Update CSS within in Admin
+function clb_custom_admin_styles() {
+
+     wp_enqueue_style('custom-admin-styles', plugin_dir_url( __FILE__ ) . 'css/custom-admin-styles.css');
+
+}
+add_action('admin_enqueue_scripts', 'clb_custom_admin_styles');
+
+
+
+
+
+// Enqueue custom scripts & styles
+add_action( 'wp_enqueue_scripts', 'clb_enqueue_custom_scripts_styles', 100 );
+function clb_enqueue_custom_scripts_styles() {
+
+     // custom JS
+     wp_enqueue_script( 'clb-custom-scripts', plugin_dir_url( __FILE__ ) . 'js/clb-custom-scripts.js', array( 'jquery' ), '', true );
+
+     // custom front-end CSS
+     wp_enqueue_style( 'clb-custom-styles', plugin_dir_url( __FILE__ ) . 'css/clb-custom-styles.css', array(), '1.0.0', 'all');
+
+}

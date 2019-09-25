@@ -1,3 +1,8 @@
+
+
+
+
+
 // This function will check all links within .entry-content, then set links to different sites to open in new tabs automatically
 var  setLinkTargets = function() {
 
@@ -12,7 +17,7 @@ var  entryContent = document.querySelector( '.entry-content' ),
                linkSite = a.origin,
                link = a.getAttribute("href");
 
-               console.log(linkSite);
+               //console.log(linkSite);
 
                if ( link.endsWith('pdf') || link.endsWith('PDF') ) {
 
