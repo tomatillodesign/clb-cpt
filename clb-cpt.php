@@ -230,3 +230,64 @@ function clb_enqueue_custom_scripts_styles() {
      wp_enqueue_style( 'clb-custom-styles', plugin_dir_url( __FILE__ ) . 'css/clb-custom-styles.css', array(), '1.0.0', 'all');
 
 }
+
+
+
+
+
+// Add Custom Color Palette to Theme
+// Don't forget to add these colors to your CSS, or else they won't appear on the front end
+// Use: https://www.sassmeister.com/
+
+/*
+// Gutenberg color options
+// -- see editor-color-palette in functions.php
+     $colors: (
+     	'salmon' 		: #F96D48,
+     	'blue' 	: #009CFF,
+     	'light-gray' 	: #EEE,
+     	'black' 		: #333,
+          'white'        : #FFF,
+     );
+
+     @each $name, $color in $colors {
+
+     	.has-#{$name}-color {
+     		color: $color;
+     	}
+
+     	.has-#{$name}-background-color {
+     		background-color: $color;
+     	}
+     }
+*/
+add_theme_support( 'editor-color-palette', array(
+	array(
+		'name'  => 'Salmon',
+		'slug'  => 'salmon',
+		'color'	=> '#F96D48',
+	),
+	array(
+		'name'  => 'Blue',
+		'slug'  => 'blue',
+		'color' => '#009CFF',
+	),
+	array(
+		'name'  => 'Light Gray',
+		'slug'  => 'light-gray',
+		'color' => '#EEE',
+	),
+	array(
+		'name'	=> 'Black',
+		'slug'	=> 'black',
+		'color'	=> '#333',
+	),
+     array(
+		'name'	=> 'White',
+		'slug'	=> 'white',
+		'color'	=> '#FFF',
+	),
+) );
+
+// -- Disable Custom Colors
+add_theme_support( 'disable-custom-colors' );
