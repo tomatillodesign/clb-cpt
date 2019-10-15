@@ -236,6 +236,8 @@ function clb_enqueue_custom_scripts_styles() {
 
 
 // Add Custom Color Palette to Theme
+
+////////////////////////////////////////////////////////////////
 // Don't forget to add these colors to your CSS, or else they won't appear on the front end
 // Use: https://www.sassmeister.com/
 
@@ -261,6 +263,9 @@ function clb_enqueue_custom_scripts_styles() {
      	}
      }
 */
+////////////////////////////////////////////////////////////////
+
+
 add_theme_support( 'editor-color-palette', array(
 	array(
 		'name'  => 'Salmon',
